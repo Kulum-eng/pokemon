@@ -1,0 +1,21 @@
+
+
+#section-home {
+    width: 100%;
+    height: 90%;
+    border: 1px solid red; 
+}
+
+.card-pokemon {
+    width: 35%;
+    height: 30%;
+    border: 1px solid green; 
+}
+
+#cards {
+    width: 100%;
+    height: 80;
+    border: 1px solid blue; 
+    display: flex;
+    gap: 4px;
+}
