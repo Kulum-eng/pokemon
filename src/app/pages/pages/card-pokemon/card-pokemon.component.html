@@ -1,12 +1,21 @@
-<div class="card">
-    <div class="card-content">
-        <div class="card-image">
-            <img src="{{pokemon.sprite}}" alt="{{pokemon.name}}">
-        </div>
-        <div class="card-data">
-            <p>{{pokemon.weight}}</p>
-            <p>{{pokemon.name}}</p>
-            <p>{{pokemon.base_experience}}</p>
-        </div>
+    <div class="relative w-80 grid grid-col-3 rounded-xl bg-white bg-clip-border text-gray-700 shadow-md mt-7">
+     
+      <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+        <img src="{{pokemon.sprite}}" alt="{{pokemon.name}}" class="object-cover w-full h-full">
+      </div>
+  
+      <div class="p-6">
+        <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+          {{pokemon.name}}
+        </h5>
+        <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+          Weight: {{pokemon.weight}} kg
+        </p>
+        <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+          Base Experience: {{pokemon.base_experience}}
+        </p>
+      </div>
+  
     </div>
-</div>
+
+  

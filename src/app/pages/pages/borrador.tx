@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-content">
+        <div class="card-image">
+            <img src="{{pokemon.sprite}}" alt="{{pokemon.name}}">
+        </div>
+        <div class="card-data">
+            <p>{{pokemon.weight}}</p>
+            <p>{{pokemon.name}}</p>
+            <p>{{pokemon.base_experience}}</p>
+        </div>
+    </div>
+</div>
