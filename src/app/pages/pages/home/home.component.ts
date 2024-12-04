@@ -3,7 +3,7 @@ import { PokeApiService } from '../../services/poke-api.service';
 import { CardPokemonComponent } from "../card-pokemon/card-pokemon.component";
 import { CommonModule } from '@angular/common';
 import { Pokemon } from '../../models/pokemon';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -13,10 +13,13 @@ import { Pokemon } from '../../models/pokemon';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private pokemonService: PokeApiService) { }
+  constructor(private pokemonService: PokeApiService, private router: Router) { }
   pokemon: Pokemon[] = [];
-
+  nameUser: any;
   ngOnInit(): void {
+    const userJSON = localStorage.getItem('user');
+    const user = userJSON ? JSON.parse(userJSON) : null;
+    this.nameUser = user.name;
     this.pokemonService.getPokemons().subscribe({
       next: (next) => {
         console.log(next);
@@ -41,5 +44,10 @@ export class HomeComponent implements OnInit {
   }
 
   searchPokemon(): void {
+  }
+
+  logout(){
+    localStorage.removeItem("user");
+    this.router.navigate(['/']);
   }
 }
